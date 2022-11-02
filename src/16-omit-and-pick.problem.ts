@@ -1,3 +1,4 @@
+import { U } from "vitest/dist/global-60f880c6";
 import { Equal, Expect } from "./helpers/type-utils";
 
 interface User {
@@ -11,6 +12,6 @@ interface User {
  * firstName and lastName properties of User?
  */
 
-type MyType = unknown;
+type MyType = Pick<User, "firstName" | "lastName">;
 
 type tests = [Expect<Equal<MyType, { firstName: string; lastName: string }>>];
